@@ -1,7 +1,5 @@
 <?php
-
-$conn = new mysqli('localhost', 'root', '', 'portfolioDB');
-if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
+require_once './db_connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];

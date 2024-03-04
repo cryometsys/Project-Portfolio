@@ -73,9 +73,41 @@ Curabitur nec fringilla augue. Donec at ante eget orci fringilla bibendum ut qui
       <img src="./images/double-arrow-top-icon.png" alt="arrow-icon" class="icon-arrow" id="icon-arrow"> 
     </section>
 
-    <seciton class="section-works" id="section-works">
+    <!-- Add a modal container -->
+    <div id="myModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="img01">
+    </div>
 
-    </seciton>
+    <section class="section-works" id="section-works">
+      <p>Check out my</p>
+      <h1>Recent Works</h1>
+      <div class="slideshow">
+        <div class="slides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="./images/sample-image-1.jpeg" alt="red-building with blue windows" style="width: 100%;">
+          <div class="slide-text">Caption Text</div>
+        </div>
+        <div class="slides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="./images/sample-image-2.jpg" alt="man performing ritual on puja" style="width: 100%;">
+          <div class="slide-text">Caption Text</div>
+        </div>
+        <div class="slides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="./images/sample-image-3.jpg" alt="two staioned boats on river" style="width: 100%;">
+          <div class="slide-text">Caption Text</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(-1)"></span>
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+      </div>
+    </section>
 
     <section class="section-projects" id="section-projects">
 

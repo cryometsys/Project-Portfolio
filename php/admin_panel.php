@@ -22,7 +22,7 @@ $result = mysqli_query($conn, $query);
 <body>
     <h1>Welcome, <?php echo $_SESSION['user_auth']['username']; ?></h1>
     <form action="login.php" method="POST">
-        <button type="submit" name="logout">Log Out</button>
+        <button type="submit" name="logout" class="logout">Log Out</button>
     </form>
     <table>
         <tr>

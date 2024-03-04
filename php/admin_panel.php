@@ -1,13 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['user_auth'])) {
     header('Location: login.php');
     exit();
 }
 
 require_once './db_connection.php';
 
-$query = "SELECT * FROM mailtable";
+$query = "SELECT * FROM mailtable ORDER BY date DESC";
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -15,17 +15,22 @@ $result = mysqli_query($conn, $query);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../StyleSheet/table.css">
+    <title>Admin Panel</title>
 </head>
 <body>
-    <h1>Welcome, <?php echo $_SESSION['username']; ?></h1>
+    <h1>Welcome, <?php echo $_SESSION['user_auth']['username']; ?></h1>
+    <form action="login.php" method="POST">
+        <button type="submit" name="logout">Log Out</button>
+    </form>
     <table>
         <tr>
             <th>Name</th>
             <th>Mail</th>
             <th>Text</th>
             <th>Time</th>
+            <th>Action</th>
         </tr>
         <?php while ($row = mysqli_fetch_assoc($result)) : ?>
             <tr>
@@ -34,12 +39,11 @@ $result = mysqli_query($conn, $query);
                 <td><?php echo $row['text']; ?></td>
                 <td><?php echo $row['date']; ?></td>
                 <td>
-                    <a href="edit_item.php?id=<?php echo $row['id']; ?>">Edit</a>
                     <a href="delete_item.php?id=<?php echo $row['id']; ?>">Delete</a>
                 </td>
             </tr>
         <?php endwhile; ?>
     </table>
-    <a href="logout.php">Logout</a>
+    
 </body>
 </html>

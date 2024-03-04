@@ -167,9 +167,16 @@ nav .logo-img {
 
 .details p, .text p {
     margin: 0;
-    color: rgb(186, 194, 188);
-    font-weight: 250;
     font-size: 15px;
+}
+
+.details p {
+    color: rgb(78, 82, 79);
+    font-weight: bold;
+}
+
+.text p {
+    color: rgb(186, 194, 188);
 }
 
 .icon-arrow {
@@ -178,11 +185,159 @@ nav .logo-img {
     bottom: 1rem;
     width: 20px;
     float: right;
-    /* margin: 30px 30px; */
     padding: 5px 5px;
     border-radius: 50%;
     background-color: white;
     cursor: pointer;
+}
+
+/* Work Section */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto; 
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    transition: transform 0.3s ease;
+}
+  
+.close {
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+
+.section-works p, .section-works h1 {
+    text-align: center;
+    color: rgb(186, 194, 188);
+}
+
+.section-works p {
+    font-size: 20px;
+    margin-bottom: 0;
+    opacity: 80%;
+}
+
+.section-works h1 {
+    margin-top: 0;
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+.section-works > * {
+    box-sizing: border-box;
+}
+
+.slideshow {
+    max-width: 900px;
+    position: relative;
+    margin: auto;
+}
+
+.slides {
+    display: none;
+    overflow: hidden;
+    max-height: 650px;
+}
+
+.slides img {
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.slide-text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
 }
 
 /* Contact Section */
@@ -201,6 +356,7 @@ nav .logo-img {
 .section-contact p {
     font-size: 20px;
     margin-bottom: 0;
+    opacity: 80%;
 }
 
 .section-contact h1 {
@@ -233,17 +389,15 @@ form input, form textarea {
 
 .contact-form button {
     display: inline-block;
-    width: auto;
-    margin: 4px 45%;
-    height: 30px;
     border: 0;
-    padding: 10px;
+    padding: 10px 20px;
     outline: none;
     cursor: pointer;
     white-space: normal;
     background-color: aquamarine;
     border-radius: 6px;
     font-weight: bold;
+    margin: 0 auto 20px 0;
 }
 
 /* Footer Section */

@@ -1,0 +1,38 @@
+
+@media screen and (max-width: 640px) {
+    .nav-menu {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        box-shadow: 0 12px 24px grey;
+        padding-block: 5rem 4rem;
+        transition: top .4s;
+        z-index: 1;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.5rem;
+        text-align: center;
+    }
+    
+    .nav-close {
+        position: absolute;
+        top: 1.15rem;
+        right: 1.15rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-toggle {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.show-menu {
+    top: 0;
+}

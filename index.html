@@ -73,7 +73,6 @@ Curabitur nec fringilla augue. Donec at ante eget orci fringilla bibendum ut qui
       <img src="./images/double-arrow-top-icon.png" alt="arrow-icon" class="icon-arrow" id="icon-arrow"> 
     </section>
 
-    <!-- Add a modal container -->
     <div id="myModal" class="modal">
       <span class="close" onclick="closeModal()">&times;</span>
       <img class="modal-content" id="img01">
@@ -117,10 +116,10 @@ Curabitur nec fringilla augue. Donec at ante eget orci fringilla bibendum ut qui
       <p>Get In Touch</p>
       <h1>Contact Me</h1>
       <div class="contact-form">
-        <form action="" method="POST">
+        <form action="./php/mail.php" method="POST">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="mail" placeholder="Your Email" required>
-          <textarea name="Message" id="" cols="30" rows="10" placeholder="Enter Message"></textarea>
+          <textarea name="message" id="" cols="30" rows="10" placeholder="Enter Message"></textarea>
           <button type="submit">SUBMIT</button>
         </form>
       </div>

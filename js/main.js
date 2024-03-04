@@ -25,25 +25,6 @@ window.addEventListener('load', () => {
     window.scrollTo(0, 0)
 })
 
-// let slideIndex = 1;
-// showSlides(slideIndex);
-
-// function showSlides(n) {
-//   let i;
-//   let slides = document.getElementsByClassName("slides");
-//   let dots = document.getElementsByClassName("dot");
-//   if (n > slides.length) {slideIndex = 1}
-//   if (n < 1) {slideIndex = slides.length}
-//   for (i = 0; i < slides.length; i++) {
-//     slides[i].style.display = "none";
-//   }
-//   for (i = 0; i < dots.length; i++) {
-//     dots[i].className = dots[i].className.replace(" active", "");
-//   }
-//   slides[slideIndex-1].style.display = "block";
-//   dots[slideIndex-1].className += " active";
-// }
-
 let slideIndex = 0;
 let timeoutID;
 showSlides();
@@ -80,14 +61,54 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function openModal(index) {
-    var modal = document.getElementById("myModal");
-    var modalImg = document.getElementById("img01"); // Corrected ID here
-    var images = document.querySelectorAll('.slides img'); // Assuming you have img tags inside .slides
-    modalImg.src = images[index].src;
-    modal.style.display = "block";
+    var modal = document.getElementById("myModal")
+    var modalImg = document.getElementById("img01")
+    var images = document.querySelectorAll('.slides img')
+    modalImg.src = images[index].src
+    modal.style.display = "block"
 }
 
 function closeModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
+    var modal = document.getElementById("myModal")
+    modal.style.display = "none"
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', function (event) {
+        event.preventDefault()
+
+        const formData = new FormData(contactForm);
+        
+        fetch('./php/mail.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Message sent successfully!');
+                clearForm()
+                window.location.reload();
+            } else {
+                throw new Error('Failed to send message');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to send message. Please try again.')
+        })
+    })
+})
+
+function clearForm() {
+    document.getElementById('contactForm').reset();
+}
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    clearForm();
+    alert('Message sent successfully!');
+    setTimeout(function() {
+        location.reload();
+    }, 2000);
+})

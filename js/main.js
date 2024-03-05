@@ -112,3 +112,44 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         location.reload();
     }, 2000);
 })
+
+window.addEventListener('load', function() {
+    var slides = document.querySelectorAll('.slides');
+    slides.forEach(function(slide) {
+        var img = slide.querySelector('img');
+        if (img) {
+            img.onload = function() {
+                var aspectRatio = img.naturalWidth / img.naturalHeight;
+                var container = slide.parentElement;
+                var containerAspectRatio = container.offsetWidth / container.offsetHeight;
+                
+                if (aspectRatio > containerAspectRatio) {
+                    img.style.width = '100%';
+                    img.style.height = 'auto';
+                } else {
+                    img.style.height = '100%';
+                    img.style.width = 'auto';
+                }
+            };
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    var slides = document.querySelectorAll('.slides');
+
+    slides.forEach(function (slide) {
+        var darkOverlay = slide.querySelector('.dark-overlay');
+        var slideText = slide.querySelector('.slide-text');
+
+        slide.addEventListener('mouseenter', function () {
+            darkOverlay.style.display = 'flex';
+            slideText.style.display = 'block';
+        });
+
+        slide.addEventListener('mouseleave', function () {
+            darkOverlay.style.display = 'none';
+            slideText.style.display = 'none';
+        });
+    });
+});

@@ -62,9 +62,7 @@
           </div>
           <div class="text">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus dui turpis, nec lacinia purus lacinia ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin euismod dolor id efficitur interdum. Nulla facilisi. Aenean facilisis, ante eu iaculis aliquam, orci lectus viverra orci, vitae egestas ex urna non lectus. Maecenas luctus, est sit amet imperdiet varius, nibh tellus pretium elit, ac bibendum libero magna vel arcu. Ut gravida, lorem ac egestas consequat, elit nulla vehicula nisl, sed rhoncus dolor lectus sed urna.
-
-Curabitur nec fringilla augue. Donec at ante eget orci fringilla bibendum ut quis nisi. Quisque egestas massa in leo faucibus, sit amet cursus tortor luctus. Curabitur vitae leo ut sem porttitor pulvinar in eu est. Maecenas sed augue enim. Nunc pellentesque metus nulla, sed semper nunc placerat vel. Vivamus pulvinar risus vitae nibh porta convallis. Donec porttitor magna at pulvinar pulvinar. Morbi a turpis nec mi consequat tempor in a odio.
+              Originating from <span style="color: red;">Chattogram</span>, Bornil Chowdhury is an aspiring student currently pursuing a B.Sc. degree in Computer Science and Enginnering at <span style="color: red;">Khulna University of Engineering and Technology</span>. A passionate photographer, he is always looking for ways to capture the very essence of life and nature around the people. One of his most cherished dreams is to visit the whole of Bangladesh, as early as possible.
             </p>
           </div>
         </div>

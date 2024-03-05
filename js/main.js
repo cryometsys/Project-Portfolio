@@ -73,32 +73,32 @@ function closeModal() {
     modal.style.display = "none"
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', function (event) {
-        event.preventDefault()
+// document.addEventListener('DOMContentLoaded', function () {
+//     const contactForm = document.getElementById('contact-form');
+//     contactForm.addEventListener('submit', function (event) {
+//         event.preventDefault()
 
-        const formData = new FormData(contactForm);
+//         const formData = new FormData(contactForm);
         
-        fetch('./php/mail.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (response.ok) {
-                alert('Message sent successfully!');
-                clearForm()
-                window.location.reload();
-            } else {
-                throw new Error('Failed to send message');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Failed to send message. Please try again.')
-        })
-    })
-})
+//         fetch('./php/mail.php', {
+//             method: 'POST',
+//             body: formData
+//         })
+//         .then(response => {
+//             if (response.ok) {
+//                 alert('Message sent successfully!');
+//                 clearForm()
+//                 window.location.reload();
+//             } else {
+//                 throw new Error('Failed to send message');
+//             }
+//         })
+//         .catch(error => {
+//             console.error('Error:', error);
+//             alert('Failed to send message. Please try again.')
+//         })
+//     })
+// })
 
 function clearForm() {
     document.getElementById('contactForm').reset();
@@ -130,10 +130,10 @@ window.addEventListener('load', function() {
                     img.style.height = '100%';
                     img.style.width = 'auto';
                 }
-            };
+            }
         }
-    });
-});
+    })
+})
 
 document.addEventListener('DOMContentLoaded', function () {
     var slides = document.querySelectorAll('.slides');
@@ -150,6 +150,6 @@ document.addEventListener('DOMContentLoaded', function () {
         slide.addEventListener('mouseleave', function () {
             darkOverlay.style.display = 'none';
             slideText.style.display = 'none';
-        });
-    });
-});
+        })
+    })
+})

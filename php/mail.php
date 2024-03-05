@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "INSERT INTO mailtable (name, mail, text) VALUES ('$name', '$email', '$message')";
     if ($conn->query($sql) === TRUE) {
-        echo "<script>window.location='../index.html';</script>";
+        echo "<script>window.location='../index.php';</script>";
         $conn->close();
         http_response_code(200);
     } else {

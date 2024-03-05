@@ -1,0 +1,18 @@
+body {
+    background-color: antiquewhite;
+}
+
+.button-section {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.button-section button {
+    font-size: 40px;
+    color: red;
+    border-radius: 1px;
+}

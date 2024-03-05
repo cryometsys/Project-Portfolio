@@ -7,8 +7,6 @@ if (!isset($_SESSION['user_auth'])) {
 
 require_once './db_connection.php';
 
-$query = "SELECT * FROM mailtable ORDER BY date DESC";
-$result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -16,34 +14,22 @@ $result = mysqli_query($conn, $query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../StyleSheet/table.css">
+    <link rel="stylesheet" href="../StyleSheet/admin.css">
     <title>Admin Panel</title>
 </head>
 <body>
     <h1>Welcome, <?php echo $_SESSION['user_auth']['username']; ?></h1>
-    <form action="login.php" method="POST">
+    <form action="logout.php" method="POST">
         <button type="submit" name="logout" class="logout">Log Out</button>
     </form>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Mail</th>
-            <th>Text</th>
-            <th>Time</th>
-            <th>Action</th>
-        </tr>
-        <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-            <tr>
-                <td><?php echo $row['name']; ?></td>
-                <td><?php echo $row['mail']; ?></td>
-                <td><?php echo $row['text']; ?></td>
-                <td><?php echo $row['date']; ?></td>
-                <td>
-                    <a href="delete_item.php?id=<?php echo $row['id']; ?>">Delete</a>
-                </td>
-            </tr>
-        <?php endwhile; ?>
-    </table>
+    <div class="button-section">
+        <form action="mailTable.php" method="POST">
+            <button type="submit" name="mail" class="mail">View Mails</button>
+        </form>
+        <form action="imgTable.php" method="POST">
+            <button type="submit" name="image" class="img">View Images</button>
+        </form>
+    </div>
     
 </body>
 </html>

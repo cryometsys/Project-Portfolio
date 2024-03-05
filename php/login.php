@@ -33,7 +33,7 @@
                 $user_exist = true;
                 $_SESSION['user_auth'] = $new_user;
                 echo '<script>alert("Successfully logged in!")</script>';
-                echo "<script>window.location='admin-panel.php';</script>";
+                echo "<script>window.location='admin_panel.php';</script>";
             }
         }
         mysqli_close($connection);
